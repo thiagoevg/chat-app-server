@@ -7,9 +7,8 @@ const app = new Koa()
 const server = http.createServer(app.callback())
 const io = socket(server)
 
-app.use(cors());
+app.use(cors({origin: proccess.env.REACT_APP_URL}));
 
-const SERVER_HOST = 'localhost'
 const SERVER_PORT = process.env.PORT || 8080
 
 io.on('connection', socket => {
