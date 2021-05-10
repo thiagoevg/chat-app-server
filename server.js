@@ -9,7 +9,7 @@ const io = socket(server)
 
 app.use(cors({origin: proccess.env.REACT_APP_URL}));
 
-const SERVER_PORT = process.env.PORT || 8080
+const SERVER_PORT = process.env.PORT
 
 io.on('connection', socket => {
     console.log('[IO] Connection => Server has a new connection')
